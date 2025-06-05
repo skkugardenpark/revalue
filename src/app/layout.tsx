@@ -116,6 +116,8 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* CSS 로딩 확인용 표시기 */}
+        <div className="css-loading-test"></div>
         {children}
       </body>
     </html>

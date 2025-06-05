@@ -6,6 +6,61 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    // 기본 컬러와 배경
+    'bg-green-50', 'bg-green-100', 'bg-green-400', 'bg-green-500', 'bg-green-600',
+    'text-green-400', 'text-green-500', 'text-green-600',
+    'border-green-400', 'border-green-500',
+    'bg-orange-50', 'bg-orange-100', 'bg-orange-500', 'bg-orange-600',
+    'text-orange-100', 'text-orange-600',
+    'border-orange-500',
+    
+    // 레이아웃
+    'min-h-screen', 'max-w-7xl', 'mx-auto', 'px-4', 'px-6', 'px-8', 'py-20',
+    'grid', 'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'gap-8', 'gap-12',
+    'flex', 'items-center', 'justify-center', 'justify-between',
+    
+    // 타이포그래피
+    'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl',
+    'font-bold', 'font-semibold', 'font-medium',
+    'text-gray-600', 'text-gray-700', 'text-gray-800',
+    
+    // 그라데이션
+    'bg-gradient-to-r', 'bg-gradient-to-br',
+    'from-green-50', 'from-green-400', 'from-green-500',
+    'from-orange-50', 'from-orange-500',
+    'to-green-50', 'to-green-500', 'to-orange-500',
+    'via-blue-50',
+    
+    // 버튼과 인터랙션
+    'rounded-full', 'rounded-lg', 'rounded-xl', 'rounded-2xl', 'rounded-3xl',
+    'shadow-lg', 'shadow-xl', 'shadow-2xl',
+    'hover:bg-green-600', 'hover:bg-orange-600', 'hover:shadow-xl',
+    'transition-all', 'duration-300', 'ease-out',
+    'transform', 'hover:scale-105', 'scale-105',
+    
+    // 레이아웃 유틸리티
+    'fixed', 'absolute', 'relative', 'top-0', 'left-0', 'right-0', 'z-50',
+    'backdrop-blur-md', 'bg-white/95',
+    'space-x-2', 'space-x-3', 'space-x-4', 'space-x-8',
+    'space-y-2', 'space-y-4', 'space-y-6', 'space-y-8',
+    
+    // 애니메이션
+    'animate-fade-in', 'animate-pulse-slow', 'animate-bounce',
+    'opacity-0', 'opacity-100',
+    
+    // 반응형
+    'sm:grid-cols-2', 'sm:grid-cols-3', 'sm:text-3xl', 'sm:text-4xl',
+    'md:flex', 'md:hidden', 'md:grid-cols-2',
+    'lg:grid-cols-2', 'lg:grid-cols-3', 'lg:grid-cols-4', 'lg:grid-cols-6',
+    'lg:justify-end', 'lg:px-8',
+    
+    // 커스텀 클래스들
+    'nav-bar', 'btn-green', 'hero-section', 'problem-section', 
+    'service-section', 'social-section', 'partnership-section',
+    'card', 'heading-1', 'heading-2', 'container-custom',
+    'gradient-green', 'gradient-orange'
+  ],
   theme: {
     extend: {
       colors: {
