@@ -1,6 +1,10 @@
 {
   "version": 2,
   "name": "revalue",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "package.json",
@@ -9,7 +13,7 @@
   ],
   "routes": [
     {
-      "src": "/.*",
+      "src": "/(.*)",
       "dest": "/"
     }
   ]
