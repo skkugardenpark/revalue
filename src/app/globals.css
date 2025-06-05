@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Re:Value 커스텀 스타일 */
+/* 강화된 Re:Value 스타일링 */
 @layer base {
   * {
     scroll-behavior: smooth;
   }
   
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #ffffff;
-    color: #171717;
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+    background: #ffffff !important;
+    color: #171717 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* 강제 리셋 */
+  * {
+    box-sizing: border-box !important;
   }
   
   @media (prefers-color-scheme: dark) {
@@ -22,22 +29,141 @@
   }
 }
 
+@layer components {
+  /* 강화된 네비게이션 스타일 */
+  .nav-bar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    padding: 1rem 0 !important;
+  }
+  
+  /* 그린 버튼 스타일 */
+  .btn-green {
+    background: #4CAF50 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+  
+  .btn-green:hover {
+    background: #45a049 !important;
+    transform: scale(1.05) !important;
+  }
+  
+  /* 섹션 스타일링 */
+  .hero-section {
+    background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%) !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 2rem !important;
+  }
+  
+  .problem-section {
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%) !important;
+    padding: 5rem 0 !important;
+  }
+  
+  .service-section {
+    background: #ffffff !important;
+    padding: 5rem 0 !important;
+  }
+  
+  .social-section {
+    background: linear-gradient(135deg, #f0f9f0 0%, #dcf4dc 100%) !important;
+    padding: 5rem 0 !important;
+  }
+  
+  .partnership-section {
+    background: linear-gradient(135deg, #fff7ed 0%, #f0f9f0 100%) !important;
+    padding: 5rem 0 !important;
+  }
+  
+  /* 카드 스타일 */
+  .card {
+    background: white !important;
+    border-radius: 1rem !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* 텍스트 스타일 */
+  .heading-1 {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .heading-2 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .text-green {
+    color: #4CAF50 !important;
+  }
+  
+  .bg-green {
+    background-color: #4CAF50 !important;
+  }
+  
+  /* 그라데이션 배경 */
+  .gradient-green {
+    background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%) !important;
+  }
+  
+  .gradient-orange {
+    background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%) !important;
+  }
+}
+
 @layer utilities {
-  /* 페이드 인 애니메이션 */
+  /* 강화된 유틸리티 클래스 */
+  .container-custom {
+    max-width: 80rem !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+  }
+  
+  .flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .grid-auto {
+    display: grid !important;
+    gap: 2rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+  
+  /* 애니메이션 */
   .animate-fade-in {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s ease-out !important;
   }
   
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .animate-fade-in-left {
-    animation: fadeInLeft 0.8s ease-out;
-  }
-  
-  .animate-fade-in-right {
-    animation: fadeInRight 0.8s ease-out;
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out !important;
   }
   
   /* 펄스 애니메이션 (느림) */
@@ -103,7 +229,7 @@
   }
 }
 
-/* 키프레임 애니메이션 정의 */
+/* 키프레임 애니메이션 */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -113,7 +239,7 @@
   }
 }
 
-@keyframes fadeInUp {
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -121,28 +247,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -155,17 +259,39 @@
   }
 }
 
-/* 반응형 타이포그래피 */
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem;
-    line-height: 2.25rem;
+/* 반응형 */
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: 2rem !important;
   }
   
-  h2 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+  .heading-2 {
+    font-size: 1.75rem !important;
   }
+  
+  .container-custom {
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* 강제 스타일 오버라이드 */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.bg-green-500,
+.bg-green-400 {
+  background-color: #4CAF50 !important;
+}
+
+.text-green-500,
+.text-green-400 {
+  color: #4CAF50 !important;
+}
+
+.border-green-500,
+.border-green-400 {
+  border-color: #4CAF50 !important;
 }
 
 /* 접근성 개선 */
