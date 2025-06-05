@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
 import Typography from '@/components/ui/Typography';
-import { colors, gradients, spacing, borderRadius } from '@/styles/design-tokens';
+import { colors, spacing, borderRadius } from '@/styles/design-tokens';
 
 interface StepCardProps {
   step: {
@@ -327,42 +326,41 @@ export default function Service() {
 
         {/* 🎨 완전히 새로워진 CTA 섹션 */}
         <div style={{ position: 'relative', overflow: 'hidden' }}>
-          <Card
-            variant="flat"
-            size="lg"
+          <div
+            className="card-3d morph-bg particles"
             style={{
-              background: gradients.orangeToGreen,
               color: colors.white,
               textAlign: 'center',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              padding: spacing[12]
             }}
           >
-            {/* 배경 장식 요소들 */}
-            <div 
-              style={{
-                position: 'absolute',
-                top: '-50px',
-                right: '-50px',
-                width: '200px',
-                height: '200px',
-                background: 'rgba(255, 255, 255, 0.1)',
-                borderRadius: borderRadius.full,
-                animation: 'float 6s ease-in-out infinite'
-              }}
-            />
-            <div 
-              style={{
-                position: 'absolute',
-                bottom: '-30px',
-                left: '-30px',
-                width: '150px',
-                height: '150px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: borderRadius.full,
-                animation: 'float 8s ease-in-out infinite reverse'
-              }}
-            />
+                         {/* 배경 장식 요소들 */}
+             <div 
+               className="float"
+               style={{
+                 position: 'absolute',
+                 top: '-50px',
+                 right: '-50px',
+                 width: '200px',
+                 height: '200px',
+                 background: 'rgba(255, 255, 255, 0.1)',
+                 borderRadius: borderRadius.full
+               }}
+             />
+             <div 
+               className="float-delayed"
+               style={{
+                 position: 'absolute',
+                 bottom: '-30px',
+                 left: '-30px',
+                 width: '150px',
+                 height: '150px',
+                 background: 'rgba(255, 255, 255, 0.05)',
+                 borderRadius: borderRadius.full
+               }}
+             />
             
             {/* 메인 콘텐츠 */}
             <div style={{ position: 'relative', zIndex: 2 }}>
@@ -412,20 +410,21 @@ export default function Service() {
                 alignItems: 'center',
                 gap: spacing[4]
               }}>
-                <Button 
-                  variant="secondary"
-                  size="xl"
-                  style={{
-                    background: colors.white,
-                    color: colors.primary[600],
-                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
-                    fontSize: '1.125rem',
-                    padding: `${spacing[4]} ${spacing[10]}`
-                  }}
-                  leftIcon={<span style={{ fontSize: '1.25rem' }}>🎯</span>}
-                >
-                  베타 참여 신청하기
-                </Button>
+                               <button 
+                 className="btn-glass"
+                 style={{
+                   fontSize: '1.125rem',
+                   padding: `${spacing[4]} ${spacing[10]}`,
+                   display: 'flex',
+                   alignItems: 'center',
+                   gap: spacing[2],
+                   cursor: 'pointer',
+                   border: 'none'
+                 }}
+               >
+                 <span style={{ fontSize: '1.25rem' }}>🎯</span>
+                 베타 참여 신청하기
+               </button>
 
                 <div style={{ 
                   display: 'flex', 
@@ -462,25 +461,16 @@ export default function Service() {
                   <span>베타 참여자 모집</span>
                   <span>1,000 / 1,500</span>
                 </div>
-                <div style={{
-                  width: '100%',
-                  height: '8px',
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  borderRadius: borderRadius.full,
-                  overflow: 'hidden'
-                }}>
-                  <div style={{
-                    width: '67%',
-                    height: '100%',
-                    background: colors.white,
-                    borderRadius: borderRadius.full,
-                    animation: 'progressFill 2s ease-out'
-                  }} />
-                </div>
+                               <div className="progress-3d">
+                 <div style={{
+                   width: '67%',
+                   animation: 'progressFill 2s ease-out'
+                 }} />
+               </div>
               </div>
-            </div>
-          </Card>
-        </div>
+                         </div>
+           </div>
+         </div>
       </div>
 
       {/* CSS 애니메이션 스타일 */}

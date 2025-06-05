@@ -67,9 +67,8 @@ interface StatCardProps {
 
 function StatCard({ icon, number, label, delay = 0 }: StatCardProps) {
   return (
-    <Card 
-      size="md" 
-      variant="default"
+    <div 
+      className="card-3d gpu-accelerated"
       style={{
         textAlign: 'center',
         animation: `slideUp 0.8s ease-out ${delay}s both`
@@ -82,7 +81,7 @@ function StatCard({ icon, number, label, delay = 0 }: StatCardProps) {
       <Typography variant="body2" color="textSecondary">
         {label}
       </Typography>
-    </Card>
+    </div>
   );
 }
 
@@ -116,7 +115,7 @@ function EmailForm({ onSubmit, isSubscribed }: EmailFormProps) {
   }
 
   return (
-    <Card>
+    <div className="card-3d retro-glow">
       <Typography variant="h5" weight="semibold" style={{ marginBottom: spacing[4] }}>
         🔔 베타 출시 알림받기
       </Typography>
@@ -143,7 +142,7 @@ function EmailForm({ onSubmit, isSubscribed }: EmailFormProps) {
           알림받기
         </Button>
       </form>
-    </Card>
+    </div>
   );
 }
 
@@ -224,14 +223,12 @@ export default function Hero() {
               </Typography>
               
               <div 
+                className="holographic"
                 style={{
                   fontSize: '2.5rem',
                   fontWeight: '700',
-                  background: gradients.primaryGreen,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  marginBottom: spacing[6]
+                  marginBottom: spacing[6],
+                  textShadow: '0 4px 8px rgba(76, 175, 80, 0.3)'
                 }}
               >
                 Re:Value

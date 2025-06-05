@@ -53,7 +53,7 @@ export const colors = {
 export const typography = {
   // Font Families
   fontFamily: {
-    primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    primary: "'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   },
   
   // Font Sizes

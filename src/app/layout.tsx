@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import ForceCSS from "@/components/ForceCSS";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Re:Value - 음식을 다시, 가치있게",
@@ -102,6 +98,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
+        {/* SUIT Font */}
+        <link 
+          rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" 
+        />
+        
         {/* Additional meta tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#4CAF50" />
@@ -116,12 +118,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        {/* 강제 CSS 로딩 컴포넌트 - Vercel 배포 보장 */}
-        <ForceCSS />
-        
-        {/* CSS 로딩 확인용 표시기 */}
-        <div className="css-loading-test"></div>
+      <body className="antialiased font-suit">
         {children}
       </body>
     </html>
