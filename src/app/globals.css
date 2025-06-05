@@ -2,6 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 최우선 강제 스타일 - Vercel 배포 시 CSS 로딩 보장 */
+* {
+  box-sizing: border-box !important;
+}
+
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+  color: #171717 !important;
+  scroll-behavior: smooth !important;
+}
+
+/* 강제 네비게이션 스타일 */
+nav[class*="nav"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  padding: 1rem 0 !important;
+}
+
+/* 강제 Hero 섹션 스타일 */
+section[id="hero"] {
+  background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%) !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 6rem 2rem 2rem 2rem !important;
+}
+
+/* 강제 버튼 스타일 */
+button[class*="btn"], 
+button[class*="green"],
+.btn-green,
+button:has(svg) {
+  background: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+button[class*="btn"]:hover, 
+button[class*="green"]:hover,
+.btn-green:hover,
+button:has(svg):hover {
+  background: #45a049 !important;
+  transform: scale(1.05) !important;
+}
+
+/* 강제 그린 컬러 클래스 */
+.bg-green-500, .bg-green-400, [class*="bg-green"] {
+  background-color: #4CAF50 !important;
+}
+
+.text-green-500, .text-green-400, [class*="text-green"] {
+  color: #4CAF50 !important;
+}
+
+/* 강제 레이아웃 */
+.max-w-7xl {
+  max-width: 80rem !important;
+  margin: 0 auto !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
 /* CSS 로딩 확인용 스타일 */
 .css-loading-test {
   position: fixed !important;
@@ -247,6 +356,48 @@
   }
 }
 
+/* Tailwind CSS 대체 스타일 (로딩 실패 대비) */
+.bg-green-500, .bg-green-400 { 
+  background-color: #4CAF50 !important; 
+}
+
+.text-green-500, .text-green-400 { 
+  color: #4CAF50 !important; 
+}
+
+.border-green-500, .border-green-400 { 
+  border-color: #4CAF50 !important; 
+}
+
+.bg-gradient-to-br { 
+  background: linear-gradient(135deg, var(--tw-gradient-stops)) !important; 
+}
+
+.from-green-50 { 
+  --tw-gradient-from: #f0f9f0;
+  --tw-gradient-stops: var(--tw-gradient-from), transparent;
+}
+
+.to-white { 
+  --tw-gradient-to: #ffffff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.fixed { position: fixed !important; }
+.top-0 { top: 0 !important; }
+.left-0 { left: 0 !important; }
+.right-0 { right: 0 !important; }
+.z-50 { z-index: 50 !important; }
+.flex { display: flex !important; }
+.items-center { align-items: center !important; }
+.justify-between { justify-content: space-between !important; }
+.px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+.py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+.text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+.font-bold { font-weight: 700 !important; }
+.rounded-full { border-radius: 9999px !important; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
+
 /* 키프레임 애니메이션 */
 @keyframes fadeIn {
   from {
@@ -346,45 +497,3 @@ select:focus {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-/* Tailwind CSS 대체 스타일 (로딩 실패 대비) */
-.bg-green-500, .bg-green-400 { 
-  background-color: #4CAF50 !important; 
-}
-
-.text-green-500, .text-green-400 { 
-  color: #4CAF50 !important; 
-}
-
-.border-green-500, .border-green-400 { 
-  border-color: #4CAF50 !important; 
-}
-
-.bg-gradient-to-br { 
-  background: linear-gradient(135deg, var(--tw-gradient-stops)) !important; 
-}
-
-.from-green-50 { 
-  --tw-gradient-from: #f0f9f0;
-  --tw-gradient-stops: var(--tw-gradient-from), transparent;
-}
-
-.to-white { 
-  --tw-gradient-to: #ffffff;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.fixed { position: fixed !important; }
-.top-0 { top: 0 !important; }
-.left-0 { left: 0 !important; }
-.right-0 { right: 0 !important; }
-.z-50 { z-index: 50 !important; }
-.flex { display: flex !important; }
-.items-center { align-items: center !important; }
-.justify-between { justify-content: space-between !important; }
-.px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-.py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
-.text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
-.font-bold { font-weight: 700 !important; }
-.rounded-full { border-radius: 9999px !important; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important; }
