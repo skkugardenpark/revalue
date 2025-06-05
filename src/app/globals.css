@@ -16,6 +16,33 @@ html, body {
   scroll-behavior: smooth !important;
 }
 
+/* 애니메이션 강제 실행 - 카드와 그래픽이 즉시 보이도록 */
+.opacity-0 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+.translate-y-8 {
+  transform: translateY(0) !important;
+}
+
+.translate-x-8 {
+  transform: translateX(0) !important;
+}
+
+/* 모든 카드가 즉시 보이도록 강제 */
+div[class*="opacity-0"] {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) !important;
+  visibility: visible !important;
+}
+
+/* 이미지가 즉시 보이도록 강제 */
+img[class*="opacity-0"] {
+  opacity: 1 !important;
+}
+
 /* 강제 네비게이션 스타일 */
 nav[class*="nav"] {
   position: fixed !important;
@@ -223,6 +250,9 @@ button:has(svg):hover {
     padding: 1.5rem !important;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
   }
   
   .card:hover {
@@ -286,10 +316,13 @@ button:has(svg):hover {
   
   /* 애니메이션 */
   .animate-fade-in {
+    opacity: 1 !important;
     animation: fadeIn 1s ease-out !important;
   }
   
   .animate-slide-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
     animation: slideUp 0.8s ease-out !important;
   }
   
