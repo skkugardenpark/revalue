@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Vercel 배포 최적화 - CSS 안정성 우선
+  // Vercel 배포 최적화 - CSS 안정성 최우선
   experimental: {
-    optimizeCss: false, // CSS 최적화 비활성화로 안정성 확보
+    optimizeCss: false, // CSS 최적화 완전 비활성화
   },
   
   // 환경 변수
@@ -24,15 +24,9 @@ const nextConfig = {
     unoptimized: false,
   },
   
-  // CSS 처리 강화
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: '[local]',
-  },
-  
-  // Webpack 설정으로 CSS 로딩 보장
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // CSS 처리 규칙
+  // CSS 문제 해결을 위한 간단한 webpack 설정
+  webpack: (config, { isServer }) => {
+    // CSS 파일 처리 보장
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,

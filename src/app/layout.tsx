@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ForceCSS from "@/components/ForceCSS";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -116,6 +117,9 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* 강제 CSS 로딩 컴포넌트 - Vercel 배포 보장 */}
+        <ForceCSS />
+        
         {/* CSS 로딩 확인용 표시기 */}
         <div className="css-loading-test"></div>
         {children}
